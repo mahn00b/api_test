@@ -1,1 +1,1 @@
-# Next Typescript Boilerplate Project
+# Hatch API Assessment
