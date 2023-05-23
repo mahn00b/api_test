@@ -2,21 +2,41 @@
   "name": "dw-us-release",
   "version": "0.0.1",
   "description": "A project designed to automate dw release processes for the US team.",
-  "main": "./bin/index.js",
+  "main": "./dist/index.js",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsc -w",
+    "transpile": "esbuild ./src/index.ts --bundle --platform=node --target=node12 --outfile=./bin/index.js",
+    "command:release": "node ./bin/index.js release",
+    "prepublish": "npm run transpile"
   },
   "bin": {
-    "dw-release": "./bin/index.js"
+    "dwrelease": "./bin/index.js"
   },
   "author": "Mahmoud Yousif <mahmoud.yousif@archwaypi.com>",
   "license": "UNLICENSED",
-  "devDependencies": {
-    "@types/yargs": "^17.0.24",
-    "typescript": "^5.0.4",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "ora": "^6.3.0",
+    "semver": "^7.5.0",
+    "simple-git": "^3.18.0",
+    "terminal-link": "^3.0.0",
     "yargs": "^17.7.1"
   },
+  "devDependencies": {
+    "@types/node": "^18.16.1",
+    "@types/yargs": "^17.0.24",
+    "esbuild": "0.17.18",
+    "rimraf": "5.0.0",
+    "typescript": "^5.0.4"
+  },
   "peerDependencies": {
+    "dw-us-ui": "git+https://bitbucket.org/directwinesweb/dw-us-ui.git#master",
     "semver": "^7.5.0"
+  },
+  "peerDependenciesMeta": {
+    "dw-us-ui": {
+      "optional": true
+    }
   }
 }

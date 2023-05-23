@@ -1,12 +1,14 @@
 {
     "compilerOptions": {
-      "target": "ES2015",
-      "module": "CommonJS",
+      "rootDir": "src",
+      "outDir": "bin",
       "strict": true,
+      "target": "esnext",
+      "module": "commonjs",
+      "sourceMap": true,
       "esModuleInterop": true,
       "moduleResolution": "node",
-      "outDir": "bin",
-      "typeRoots": ["node_modules/@types"]
+      "typeRoots": ["typings/"]
     },
-    "include": ["src/**/*.ts"]
+    "include": ["src/**/*.ts", "typings/**/*.d.ts"]
   }
