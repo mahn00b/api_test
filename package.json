@@ -8,7 +8,8 @@
     "dev": "tsc -w",
     "transpile": "esbuild ./src/index.ts --bundle --platform=node --target=node12 --outfile=./bin/index.js",
     "command:release": "node ./bin/index.js release",
-    "prepublish": "npm run transpile"
+    "prepublish": "npm run transpile",
+    "postinstall": "npm pkg set scripts.dwrelease \"dwrelease release\""
   },
   "bin": {
     "dwrelease": "./bin/index.js"
@@ -18,8 +19,8 @@
   "dependencies": {
     "chalk": "^5.2.0",
     "ora": "^6.3.0",
-    "semver": "^7.5.0",
     "simple-git": "^3.18.0",
+    "standard-version": "^9.5.0",
     "terminal-link": "^3.0.0",
     "yargs": "^17.7.1"
   },
@@ -31,8 +32,7 @@
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
-    "dw-us-ui": "git+https://bitbucket.org/directwinesweb/dw-us-ui.git#master",
-    "semver": "^7.5.0"
+    "dw-us-ui": "git+https://bitbucket.org/directwinesweb/dw-us-ui.git#master"
   },
   "peerDependenciesMeta": {
     "dw-us-ui": {
