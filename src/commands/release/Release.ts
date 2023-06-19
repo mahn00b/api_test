@@ -11,42 +11,61 @@ const exec = promisify(rawExec);
 
 import type { Command } from '../.';
 import { DEVELOP, MASTER } from '../../constants';
+import { getReleaseBranchName } from '../../utils';
 
-const handler = async () => {
+async function updateDevelop() {
+    const git = Git();
+    await oraPromise(git.checkout(DEVELOP), { text: chalk.underline.blue('Switching to develop...') });
+    await oraPromise(git.pull('origin', DEVELOP, { '--rebase': 'true' }), { text: chalk.underline.blue('Pulling latest from develop...') });
+}
 
+async function stageReleaseBranch(releaseBranchName: string) {
     const git = Git();
 
-    await oraPromise(git.checkout(DEVELOP), { text: chalk.underline.blue('Switching to develop...') });
-
-    await oraPromise(git.pull('origin', DEVELOP, { '--rebase': 'true' }), { text: chalk.underline.blue('Pulling latest from develop...') });
-
-    const today = new Date();
-    const date = today.getDate();
-    const month = today.toLocaleDateString('default', { month: 'short' });
-    const year = today.getFullYear().toString().substring(-2);
-
-
-    const releaseBranchConvention = `release/${date}${month}${year}`;
-
-    const branchList = await oraPromise(git.branchLocal(), { text: chalk.underline.blue('Checking local branches...') });
-    if (branchList.all.includes(releaseBranchConvention)) {
-        console.log('\n\n' + chalk.underline.red(`Branch ${releaseBranchConvention} already exists`) + '\n\n');
-
-        await oraPromise(git.deleteLocalBranch(releaseBranchConvention, true), { text: chalk.underline.blue(`Deleting ${releaseBranchConvention}...`) });
-
-    }
-    await oraPromise(git.checkoutLocalBranch(releaseBranchConvention), { text: chalk.underline.blue(`Creating release branch: ${releaseBranchConvention}...`) });
+    await oraPromise(git.checkoutLocalBranch(releaseBranchName), { text: chalk.underline.blue(`Creating release branch: ${releaseBranchConvention}...`) });
 
     await oraPromise(exec('npm upgrade dw-us-ui'), chalk.underline.blue('Updating dw-us-ui...'));
 
     await oraPromise(exec('npm run semver'), { text: chalk.underline.blue('Performing version bump...') });
-    const { remoteMessages: { all: [_, pullUrl] } } = await oraPromise(git.push('origin', releaseBranchConvention), { text: chalk.underline.blue('Pushing release branch...')});
+}
 
+async function pushReleaseBranch(releaseBranchName: string): Promise<string> {
+    const git = Git();
+
+    const { remoteMessages: { all: [_, pullUrl] } } = await oraPromise(git.push('origin', releaseBranchName), { text: chalk.underline.blue('Pushing release branch...')});
+    return pullUrl;
+}
+
+function outputPullRequestUrl(pullUrl: string) {
     const masterUrl = `${pullUrl}&targetBranch=${encodeURIComponent(`refs/heads/${MASTER}`)}`;
     const developUrl = `${pullUrl}&targetBranch=${encodeURIComponent(`refs/heads/${DEVELOP}`)}`;
 
     console.log(`\n\n${terminalLink('Open PR against master', masterUrl)}`);
     console.log(`${terminalLink('Open PR against develop', developUrl)}\n\n`);
+}
+
+const handler = async () => {
+
+    const git = Git();
+
+    await updateDevelop();
+
+    const releaseBranchName = getReleaseBranchName();
+
+    const branchList = await oraPromise(git.branchLocal(), { text: chalk.underline.blue('Checking local branches...') });
+    if (branchList.all.includes(releaseBranchName)) {
+        console.log('\n\n' + chalk.underline.red(`Branch ${releaseBranchName} already exists`) + '\n\n');
+
+        await oraPromise(git.deleteLocalBranch(releaseBranchName, true), { text: chalk.underline.blue(`Deleting ${releaseBranchName}...`) });
+
+    }
+
+    await stageReleaseBranch(releaseBranchName);
+
+
+    const pullUrl = await pushReleaseBranch(releaseBranchName);
+
+    outputPullRequestUrl(pullUrl);
 }
 
 const setup = (yargs: Argv) => {
