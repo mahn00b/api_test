@@ -1,18 +1,16 @@
 {
-  "name": "dw-us-release",
+  "name": "@directwines/cork",
   "version": "0.0.1",
-  "description": "A project designed to automate dw release processes for the US team.",
-  "main": "./dist/index.js",
+  "description": "A project designed to provide a set of command line utilities to dw group tech.",
+  "main": "./bit/index.js",
   "type": "commonjs",
   "scripts": {
     "dev": "tsc -w",
-    "transpile": "esbuild ./src/index.ts --bundle --platform=node --target=node12 --outfile=./bin/index.js",
-    "command:release": "node ./bin/index.js release",
-    "prepublish": "npm run transpile",
-    "postinstall": "npm pkg set scripts.dwrelease \"dwrelease release\""
+    "build": "esbuild ./src/index.ts --bundle --platform=node --target=node12 --outfile=./bin/index.js",
+    "command:react-release": "node ./bin/index.js react-release"
   },
   "bin": {
-    "dwrelease": "./bin/index.js"
+    "cork": "./bin/index.js"
   },
   "author": "Mahmoud Yousif <mahmoud.yousif@archwaypi.com>",
   "license": "UNLICENSED",
@@ -32,7 +30,7 @@
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
-    "dw-us-ui": "git+https://bitbucket.org/directwinesweb/dw-us-ui.git#master"
+    "dw-us-ui": "*"
   },
   "peerDependenciesMeta": {
     "dw-us-ui": {

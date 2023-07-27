@@ -1,5 +1,5 @@
 import type { Argv} from 'yargs';
-import Release from './release';
+import Release from './react-release';
 
 export declare interface Command {
     commandName: string;
