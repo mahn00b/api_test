@@ -6,7 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "tsc -w",
-    "build": "esbuild ./src/index.ts --bundle --platform=node --target=node14 --outfile=./bin/index.js",
+    "build": "esbuild ./src/index.ts --bundle --platform=node --target=node12 --outfile=./bin/index.js",
     "command:react-release": "node ./bin/index.js react-release"
   },
   "files": [

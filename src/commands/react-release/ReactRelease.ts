@@ -171,6 +171,7 @@ const setup = (yargs: Argv) => {
         .example('$0 react-release', 'Basic usage.')
         .example('$0 react-release --upgrade-deps', COMMAND_DESCRIPTION)
         .help('h')
+        .alias('h', 'help')
         .alias('v', 'version')
         .option('remote-name', {
             describe: 'If you are not using origin as your remote name, you can specify it here.',
@@ -185,6 +186,7 @@ const setup = (yargs: Argv) => {
         .option('dry-run', {
             describe: 'Runs the necessary commands with no remote changes. Undoing any local changes at the end of the process. Useful for testing.',
             default: false,
+            alias: 'dry'
         })
         .option('with-yarn', {
             describe: 'Uses the yarn package-manager to upgrade dependencies.',
