@@ -12,7 +12,7 @@ export interface MessageStyle {
     bgColor?: BackgroundColorName;
 }
 
-/** A simple utility class that wraps around the librarys we use to write to the console */
+/** A simple utility class that wraps around the libraries we use to write to the console */
 class Logger {
     console: Console;
 

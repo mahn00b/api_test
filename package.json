@@ -6,9 +6,15 @@
   "type": "commonjs",
   "scripts": {
     "dev": "tsc -w",
-    "build": "esbuild ./src/index.ts --bundle --platform=node --target=node12 --outfile=./bin/index.js",
+    "build": "esbuild ./src/index.ts --bundle --platform=node --target=node14 --outfile=./bin/index.js",
     "command:react-release": "node ./bin/index.js react-release"
   },
+  "files": [
+    "bin",
+    "src",
+    "package.json",
+    "README.md"
+  ],
   "bin": {
     "cork": "./bin/index.js"
   },
@@ -24,6 +30,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.16.1",
+    "@types/standard-version": "^7.1.0",
     "@types/yargs": "^17.0.24",
     "esbuild": "0.17.18",
     "rimraf": "5.0.0",

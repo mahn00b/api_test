@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 import { Argv } from 'yargs';
-import Git from 'simple-git';
+import Git, { ResetMode } from 'simple-git';
 import terminalLink from 'terminal-link';
+import standardVersion from 'standard-version';
 
 import type { Command } from '..';
 import { DEVELOP, MASTER } from '../../constants';
@@ -27,9 +28,9 @@ async function updateDevelop() {
     return await git.pull('origin', DEVELOP, { '--rebase': 'true' });
 }
 
-async function upgradeNodeModule(lib: string) {
+async function upgradeNodeModule(lib: string, withYarn: boolean = false) {
     try {
-        await exec(`npm upgrade ${lib}`);
+        await exec(`${withYarn ? 'yarn' : 'npm'} upgrade ${lib}`);
     } catch (err) {
         throw new Error(`Could not upgrade ${lib}`);
     }
@@ -39,14 +40,34 @@ async function stageReleaseBranch(releaseBranchName: string) {
     const git = Git();
 
     await git.checkoutLocalBranch(releaseBranchName);
-
-    // await exec('npm run semver');
 }
 
-async function pushReleaseBranch(releaseBranchName: string): Promise<string> {
+async function bumpVersion(dryRun: boolean = false) {
+
+    try {
+        /** @deprecated usage. Using standard-version like this presents issues around host checking.
+         *  Example: Error: Cannot find module '../hosts/bitbucket'
+         *
+            await standardVersion({
+                dryRun,
+                infile: `${process.cwd()}/CHANGELOG.md`,
+                noVerify: true,
+            });
+
+            TODO: Find an alternative to standard-version that doesn't require host checking
+         */
+
+        await exec(`npx standard-version ${dryRun ? '--dry-run' : ''}`);
+
+    } catch (err: any) {
+        throw new Error(err);
+    }
+}
+
+async function pushReleaseBranch(releaseBranchName: string, remoteName: string = 'origin'): Promise<string> {
     const git = Git();
 
-    const { remoteMessages: { all: [_, pullUrl] } } = await git.push('origin', releaseBranchName);
+    const { remoteMessages: { all: [_, pullUrl] } } = await git.push(remoteName, releaseBranchName);
     return pullUrl;
 }
 
@@ -58,10 +79,10 @@ function outputPullRequestUrl(pullUrl: string) {
     console.log(`${terminalLink('Open PR against develop', developUrl)}\n\n`);
 }
 
-async function verifyBranches() {
+async function verifyRepo(releaseBranchName: string) {
     const git = Git();
+
     const summary = await git.branchLocal();
-    const releaseBranchName = getReleaseBranchName();
 
     if (summary.all.includes(releaseBranchName)) {
         throw new Error(`
@@ -77,6 +98,7 @@ async function verifyBranches() {
 async function restoreInitState(initBranch: string, releaseBranchName: string) {
     const git = Git();
 
+    await git.reset(ResetMode.HARD);
     await git.checkout(initBranch);
     return await git.deleteLocalBranch(releaseBranchName, true);
 }
@@ -88,18 +110,20 @@ const handler = async (argv: any) => {
 
     const logger = new Logger(console);
 
+    if (!isInNodeAppContext()) {
+        throw new Error('Must be running in Nodejs app context');
+    }
+
+    if (!await isGitRepo()) {
+        throw new Error('Must be running in a git repo');
+    }
+
+
+    const releaseBranchName = getReleaseBranchName();
+
+    const initBranch = await logger.logWithSpinner('Verifying local branches', verifyRepo(releaseBranchName), defaultStyle);
+
     try {
-        if (!isInNodeAppContext()) {
-            throw new Error('Must be running in Nodejs app context');
-        }
-
-        if (!await isGitRepo()) {
-            throw new Error('Must be running in a git repo');
-        }
-
-        const releaseBranchName = getReleaseBranchName();
-
-        const initBranch = await logger.logWithSpinner('Verifying local branches', verifyBranches(), defaultStyle);
         await logger.logWithSpinner('Getting the latest from develop', updateDevelop(), defaultStyle);
 
         if (argv.upgradeDeps) {
@@ -112,7 +136,7 @@ const handler = async (argv: any) => {
                 logger.log('Beginning upgrade process:', defaultStyle);
 
                 for (const dep of packages) {
-                    await logger.logWithSpinner(`Upgrading ${dep}`, upgradeNodeModule(dep), defaultStyle);
+                    await logger.logWithSpinner(`Upgrading ${dep}`, upgradeNodeModule(dep, argv.withYarn), defaultStyle);
                 }
 
                 logger.log('Successfully updated direct wines packages.\n', defaultStyle)
@@ -121,19 +145,22 @@ const handler = async (argv: any) => {
             }
         }
 
-        await verifyBranches();
         await logger.logWithSpinner('Staging release branch', stageReleaseBranch(releaseBranchName), defaultStyle);
 
+        logger.log('Bumping version', defaultStyle);
+        await bumpVersion(argv.dryRun);
+
         if (!argv.dryRun) {
-            const pullUrl = await logger.logWithSpinner('Pushing release branch', pushReleaseBranch(releaseBranchName), defaultStyle);
+            const pullUrl = await logger.logWithSpinner('Pushing release branch', pushReleaseBranch(releaseBranchName, argv.remoteName), defaultStyle);
             outputPullRequestUrl(pullUrl);
         } else {
            await logger.logWithSpinner('Dry run complete. Restoring initial state', restoreInitState(initBranch, releaseBranchName), defaultStyle);
         }
 
     } catch (err) {
+        console.error(err)
         logger.log(err as string, errorStyle);
-        throw err;
+        await logger.logWithSpinner('Restoring initial state', restoreInitState(initBranch, releaseBranchName), errorStyle);
     }
 
 }
@@ -145,11 +172,24 @@ const setup = (yargs: Argv) => {
         .example('$0 react-release --upgrade-deps', COMMAND_DESCRIPTION)
         .help('h')
         .alias('v', 'version')
+        .option('remote-name', {
+            describe: 'If you are not using origin as your remote name, you can specify it here.',
+            default: 'origin',
+            alias: 'r',
+        })
         .option('upgrade-deps', {
             describe: 'Parses the package.json and upgrades all direct-wines dependencies to the latest version',
+            default: false,
+            alias: 'u',
         })
         .option('dry-run', {
-            describe: 'Stages the release branch, but does not push it to origin',
+            describe: 'Runs the necessary commands with no remote changes. Undoing any local changes at the end of the process. Useful for testing.',
+            default: false,
+        })
+        .option('with-yarn', {
+            describe: 'Uses the yarn package-manager to upgrade dependencies.',
+            default: false,
+            alias: 'yarn',
         })
         .demandCommand(0, 0)
 }
