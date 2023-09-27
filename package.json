@@ -24,7 +24,6 @@
     "chalk": "^5.2.0",
     "ora": "^6.3.0",
     "simple-git": "^3.18.0",
-    "standard-version": "^9.5.0",
     "terminal-link": "^3.0.0",
     "yargs": "^17.7.1"
   },
@@ -37,10 +36,10 @@
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
-    "dw-us-ui": "*"
+    "standard-version": "*"
   },
   "peerDependenciesMeta": {
-    "dw-us-ui": {
+    "standard-version": {
       "optional": true
     }
   }
