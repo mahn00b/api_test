@@ -5,6 +5,8 @@ import { promisify } from 'util';
 
 import { DIRECT_WINES_FRONTEND_ORG } from '../../constants';
 
+export const exec = promisify(rawExec);
+
 export function isInNodeAppContext() {
   const packageJsonPath = path.join(process.cwd(), 'package.json');
   return fs.existsSync(packageJsonPath);
@@ -29,4 +31,11 @@ export async function parseDirectWinesDependencies() {
     }
 }
 
-export const exec = promisify(rawExec);
+export const upgradeNodeModule = async (lib: string, withYarn: boolean = false) => {
+    try {
+        await exec(`${withYarn ? 'yarn' : 'npm'} upgrade ${lib}`);
+    } catch (err) {
+        throw new Error(`Could not upgrade ${lib}`);
+    }
+}
+

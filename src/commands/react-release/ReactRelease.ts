@@ -7,40 +7,14 @@ import standardVersion from 'standard-version';
 
 import type { Command } from '..';
 import { DEVELOP, MASTER } from '../../constants';
-import { getReleaseBranchName } from '../../utils';
 
 import Logger, { MessageStyle } from '../../utils/logger';
-import { isInNodeAppContext, parseDirectWinesDependencies, exec } from '../../utils/node';
-
+import { isInNodeAppContext, parseDirectWinesDependencies, exec, upgradeNodeModule } from '../../utils/node';
+import { updateBranch, isGitRepo, doesBranchExist, getCurrentBranchName, resetWorkTreeAndCheckoutBranch, deleteLocalBranch, generateReleaseBranchName, createAndCheckoutLocalBranch } from '../../utils/git';
 
 const COMMAND_NAME = 'react-release';
 const COMMAND_DESCRIPTION = 'Create a release branch and upgrade all direct-wines dependencies to the latest version.';
 
-async function isGitRepo() {
-    const git = Git();
-    return await git.checkIsRepo();
-}
-
-async function updateDevelop() {
-    const git = Git();
-    await git.checkout(DEVELOP);
-
-    return await git.pull('origin', DEVELOP, { '--rebase': 'true' });
-}
-
-async function upgradeNodeModule(lib: string, withYarn: boolean = false) {
-    try {
-        await exec(`${withYarn ? 'yarn' : 'npm'} upgrade ${lib}`);
-    } catch (err) {
-        throw new Error(`Could not upgrade ${lib}`);
-    }
-}
-
-async function stageReleaseBranch(releaseBranchName: string) {
-    const git = Git();
-
-    await git.checkoutLocalBranch(releaseBranchName);
-}
 
 async function bumpVersion(dryRun: boolean = false) {
 
@@ -57,6 +31,9 @@ async function bumpVersion(dryRun: boolean = false) {
             TODO: Find an alternative to standard-version that doesn't require host checking
          */
 
+        /**
+         * we use npx, because bundling standard-version is expensive.
+         */
         await exec(`npx standard-version ${dryRun ? '--dry-run' : ''}`);
 
     } catch (err: any) {
@@ -67,40 +44,34 @@ async function bumpVersion(dryRun: boolean = false) {
 async function pushReleaseBranch(releaseBranchName: string, remoteName: string = 'origin'): Promise<string> {
     const git = Git();
 
-    const { remoteMessages: { all: [_, pullUrl] } } = await git.push(remoteName, releaseBranchName);
-    return pullUrl;
+    const { remoteMessages } = await git.push(remoteName, releaseBranchName);
+    return remoteMessages.all.join('\n');
 }
 
 function outputPullRequestUrl(pullUrl: string) {
     const masterUrl = `${pullUrl}&targetBranch=${encodeURIComponent(`refs/heads/${MASTER}`)}`;
     const developUrl = `${pullUrl}&targetBranch=${encodeURIComponent(`refs/heads/${DEVELOP}`)}`;
 
+    // TODO: Add a flag to open the PR in the browser
     console.log(`\n\n${terminalLink('Open PR against master', masterUrl)}`);
     console.log(`${terminalLink('Open PR against develop', developUrl)}\n\n`);
 }
 
 async function verifyRepo(releaseBranchName: string) {
-    const git = Git();
-
-    const summary = await git.branchLocal();
-
-    if (summary.all.includes(releaseBranchName)) {
+    if (await doesBranchExist(releaseBranchName)) {
         throw new Error(`
             Branch ${releaseBranchName} already exists
             Please delete it and try again.
         `);
     }
 
-    return summary.current;
+    return await getCurrentBranchName();
 }
 
-
 async function restoreInitState(initBranch: string, releaseBranchName: string) {
-    const git = Git();
+   await resetWorkTreeAndCheckoutBranch(initBranch, ResetMode.HARD);
 
-    await git.reset(ResetMode.HARD);
-    await git.checkout(initBranch);
-    return await git.deleteLocalBranch(releaseBranchName, true);
+  return await deleteLocalBranch(releaseBranchName);
 }
 
 const handler = async (argv: any) => {
@@ -119,12 +90,13 @@ const handler = async (argv: any) => {
     }
 
 
-    const releaseBranchName = getReleaseBranchName();
+    const releaseBranchName = generateReleaseBranchName();
 
     const initBranch = await logger.logWithSpinner('Verifying local branches', verifyRepo(releaseBranchName), defaultStyle);
 
+
     try {
-        await logger.logWithSpinner('Getting the latest from develop', updateDevelop(), defaultStyle);
+        await logger.logWithSpinner('Getting the latest from develop', updateBranch('origin', 'develop'), defaultStyle);
 
         if (argv.upgradeDeps) {
             const packages = await logger.logWithSpinner('Checking for direct-wines dependencies', parseDirectWinesDependencies(), defaultStyle);
@@ -145,7 +117,7 @@ const handler = async (argv: any) => {
             }
         }
 
-        await logger.logWithSpinner('Staging release branch', stageReleaseBranch(releaseBranchName), defaultStyle);
+        await logger.logWithSpinner('Staging release branch', createAndCheckoutLocalBranch(releaseBranchName), defaultStyle);
 
         logger.log('Bumping version', defaultStyle);
         await bumpVersion(argv.dryRun);
