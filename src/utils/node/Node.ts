@@ -18,19 +18,6 @@ export async function parsePackageJson()  {
   return JSON.parse(packageJson.toString());
 }
 
-export async function parseDirectWinesDependencies() {
-    try {
-        const packageJson = await parsePackageJson();
-        const { dependencies, devDependencies } = packageJson;
-
-        const allDeps = { ...dependencies, ...devDependencies };
-
-        return Object.keys(allDeps).filter((lib) => allDeps[lib].includes(DIRECT_WINES_FRONTEND_ORG));
-    } catch (err) {
-        throw new Error('Could not parse package.json');
-    }
-}
-
 export const upgradeNodeModule = async (lib: string, withYarn: boolean = false) => {
     try {
         await exec(`${withYarn ? 'yarn' : 'npm'} upgrade ${lib}`);
@@ -38,4 +25,3 @@ export const upgradeNodeModule = async (lib: string, withYarn: boolean = false) 
         throw new Error(`Could not upgrade ${lib}`);
     }
 }
-

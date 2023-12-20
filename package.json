@@ -5,13 +5,12 @@
   "main": "./bit/index.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "tsc -w",
+    "dev": "esbuild ./src/index.ts --watch --bundle --platform=node --target=node12 --outfile=./bin/index.js",
     "build": "esbuild ./src/index.ts --bundle --platform=node --target=node12 --outfile=./bin/index.js",
     "command:react-release": "node ./bin/index.js react-release"
   },
   "files": [
     "bin",
-    "src",
     "package.json",
     "README.md"
   ],
@@ -21,7 +20,9 @@
   "author": "Mahmoud Yousif <mahmoud.yousif@archwaypi.com>",
   "license": "UNLICENSED",
   "dependencies": {
+    "@types/inquirer": "^9.0.3",
     "chalk": "^5.2.0",
+    "inquirer": "^9.2.11",
     "ora": "^6.3.0",
     "simple-git": "^3.18.0",
     "terminal-link": "^3.0.0",

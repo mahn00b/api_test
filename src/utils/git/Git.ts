@@ -1,4 +1,4 @@
-import Git, { ResetMode } from 'simple-git';
+import Git, { ResetMode, TaskOptions } from 'simple-git';
 
 
 export const generateReleaseBranchName = (): ReleaseBranchConvention => {
@@ -15,16 +15,34 @@ export const isGitRepo = async () => {
     return await git.checkIsRepo();
 }
 
-export const updateBranch = async (branchName: string, remoteAlias: string = 'origin') => {
+export const updateAndRebaseLocalBranch = async (branchName: string, remoteAlias: string = 'origin', dryRun: boolean = false) => {
     const git = Git();
     await git.checkout(branchName);
 
-    return await git.pull(remoteAlias, branchName, { '--rebase': 'true' });
+    const opts: TaskOptions = { '--rebase': 'true' };
+
+    if (dryRun) {
+        opts['--dry-run'] = null;
+    }
+
+    return await git.pull(remoteAlias, branchName, opts);
 }
 
-export const getRemoteList = async () => {
+/**
+ * @description Get a list of all remotes. Optionally filter by a search string.
+ * @param queryString A search string to filter the remote list by
+ * @returns
+ */
+export const getRemoteList = async (queryString?: string) => {
     const git = Git();
-    return await git.getRemotes(true);
+
+    const remotes = await git.getRemotes(true);
+
+    if (queryString) {
+        return remotes.filter((remote) => remote.name.includes(queryString) || remote.refs.push.includes(queryString));
+    }
+
+    return remotes;
 };
 
 export const getCurrentBranchName = async (): Promise<string> => {
@@ -71,3 +89,10 @@ export const createAndCheckoutLocalBranch = async (branchName: string) => {
 
     await git.checkoutLocalBranch(branchName);
 };
+
+export const pushBranch = async (releaseBranchName: string, remoteName: string = 'origin'): Promise<string> => {
+    const git = Git();
+
+    const { remoteMessages } = await git.push(remoteName, releaseBranchName);
+    return remoteMessages.all.join('\n');
+}
