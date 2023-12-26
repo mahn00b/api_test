@@ -1,5 +1,6 @@
 import type { Argv} from 'yargs';
 import Release from './react-release';
+import ContentfulDeepCopy from './contentful-deep-copy';
 
 export declare interface Command {
     commandName: string;
@@ -12,4 +13,5 @@ export declare interface Command {
 
 export const commands = {
     Release,
+    ContentfulDeepCopy
 };

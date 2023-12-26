@@ -1,0 +1,1150 @@
+[
+  {
+    "metadata": {
+      "tags": []
+    },
+    "sys": {
+      "space": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Space",
+          "id": "k1ni6e3k3b2n"
+        }
+      },
+      "id": "S4ndREBLR1lL9ergznoyy",
+      "type": "Entry",
+      "createdAt": "2022-04-12T18:52:17.359Z",
+      "updatedAt": "2023-05-30T14:54:53.867Z",
+      "environment": {
+        "sys": {
+          "id": "master",
+          "type": "Link",
+          "linkType": "Environment"
+        }
+      },
+      "publishedVersion": 407,
+      "publishedAt": "2023-05-30T14:54:53.867Z",
+      "firstPublishedAt": "2022-04-12T18:53:24.192Z",
+      "createdBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "0DLoXH86aR1XCtFWxNcynJ"
+        }
+      },
+      "updatedBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "0aouLRBGTtpDK4T7HeCxae"
+        }
+      },
+      "publishedCounter": 80,
+      "version": 408,
+      "publishedBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "0aouLRBGTtpDK4T7HeCxae"
+        }
+      },
+      "automationTags": [],
+      "contentType": {
+        "sys": {
+          "type": "Link",
+          "linkType": "ContentType",
+          "id": "clubBanner"
+        }
+      }
+    },
+    "fields": {
+      "title": {
+        "en-US": "LW Promo Ribbon"
+      },
+      "brand": {
+        "en-US": [
+          "LAW"
+        ]
+      },
+      "brands": {
+        "en-US": "LAW"
+      },
+      "promoType": {
+        "en-US": [
+          "top-recruitment-promo"
+        ]
+      },
+      "isWineryDirect": {
+        "en-US": false
+      },
+      "transitionTimer": {
+        "en-US": "5000"
+      },
+      "transitionAnimation": {
+        "en-US": "fade-in"
+      },
+      "sliderStyle": {
+        "en-US": "#navbar-app .slick-slider {\nmargin-bottom: 0 !important;\n}\n\n.sliding-banner-content {\n display: flex !important;\njustify-content: center;\nalign-items: center;\nheight: 50px !important;\nbackground: #00193C;\ncolor: #F9F3E7;\nfont-size: 14px;\nfont-weight: bold;\n}\n\n.sliding-banner-content a {\ncolor: #F9F3E7!important;\nfont-size: 14px!important;\ntext-decoration: underline!important;\n}\n\n\n\n\n"
+      },
+      "startDate": {
+        "en-US": "2023-02-09T00:00-05:00"
+      },
+      "endDate": {
+        "en-US": "2030-02-25T00:00-05:00"
+      },
+      "unidentified3t": {
+        "en-US": [
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "k1ni6e3k3b2n"
+                }
+              },
+              "id": "1l3pjbfAsQFbzyNx5kJTok",
+              "type": "Entry",
+              "createdAt": "2023-05-24T14:11:51.818Z",
+              "updatedAt": "2023-05-26T14:19:39.153Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "publishedVersion": 44,
+              "publishedAt": "2023-05-26T14:19:39.153Z",
+              "firstPublishedAt": "2023-05-24T14:20:37.967Z",
+              "createdBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "748njyY4FDZiHKvXorl3vj"
+                }
+              },
+              "updatedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "748njyY4FDZiHKvXorl3vj"
+                }
+              },
+              "publishedCounter": 9,
+              "version": 45,
+              "publishedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "748njyY4FDZiHKvXorl3vj"
+                }
+              },
+              "automationTags": [],
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "ribbonMessage"
+                }
+              }
+            },
+            "fields": {
+              "title": {
+                "en-US": "Uncork 12 amazing wines ONLY $100"
+              },
+              "eligiblePages": {
+                "en-US": [
+                  "product_responsive",
+                  "rebrand",
+                  "homepage_responsive",
+                  "customer_service_responsive",
+                  "cmlp_responsive",
+                  "aboutus_responsive",
+                  "search"
+                ]
+              },
+              "pagelayerTargeting": {
+                "en-US": [
+                  {
+                    "metadata": {
+                      "tags": []
+                    },
+                    "sys": {
+                      "space": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "Space",
+                          "id": "k1ni6e3k3b2n"
+                        }
+                      },
+                      "id": "7CCm8n4MLE4sIeMk95OZ6V",
+                      "type": "Entry",
+                      "createdAt": "2023-05-26T14:17:23.388Z",
+                      "updatedAt": "2023-06-15T14:51:45.710Z",
+                      "environment": {
+                        "sys": {
+                          "id": "master",
+                          "type": "Link",
+                          "linkType": "Environment"
+                        }
+                      },
+                      "publishedVersion": 25,
+                      "publishedAt": "2023-06-15T14:51:45.710Z",
+                      "firstPublishedAt": "2023-05-26T14:18:33.819Z",
+                      "createdBy": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "User",
+                          "id": "748njyY4FDZiHKvXorl3vj"
+                        }
+                      },
+                      "updatedBy": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "User",
+                          "id": "0aouLRBGTtpDK4T7HeCxae"
+                        }
+                      },
+                      "publishedCounter": 9,
+                      "version": 26,
+                      "publishedBy": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "User",
+                          "id": "0aouLRBGTtpDK4T7HeCxae"
+                        }
+                      },
+                      "automationTags": [],
+                      "contentType": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "ContentType",
+                          "id": "pageLayerTargeting"
+                        }
+                      }
+                    },
+                    "fields": {
+                      "title": {
+                        "en-US": "3TUnidentified"
+                      },
+                      "pagelayerValue": {
+                        "en-US": [
+                          "unlimitedUser:false"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "slidingBannerText": {
+                "en-US": "<div title=\"Uncork 12 amazing wines ONLY $100\" class=\"sliding-banner-content\">\n  <span class=\"text font-weight-bold fade-in-text\">\n    Uncork 12 amazing wines ONLY $100\n    <a id=\"messageOne\" href=\"/AD3W017\" style=\"padding-left:5px;\" ><u>with free shipping</u></a>\n  </span>\n</div>"
+              }
+            }
+          },
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "k1ni6e3k3b2n"
+                }
+              },
+              "id": "2jyolS4FJ1p18zUG4H3s3a",
+              "type": "Entry",
+              "createdAt": "2023-05-24T14:21:47.118Z",
+              "updatedAt": "2023-05-26T14:19:42.404Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "publishedVersion": 33,
+              "publishedAt": "2023-05-26T14:19:42.404Z",
+              "firstPublishedAt": "2023-05-24T14:25:11.681Z",
+              "createdBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "748njyY4FDZiHKvXorl3vj"
+                }
+              },
+              "updatedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "748njyY4FDZiHKvXorl3vj"
+                }
+              },
+              "publishedCounter": 12,
+              "version": 34,
+              "publishedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "748njyY4FDZiHKvXorl3vj"
+                }
+              },
+              "automationTags": [],
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "ribbonMessage"
+                }
+              }
+            },
+            "fields": {
+              "title": {
+                "en-US": "Get the best of Laithwaites"
+              },
+              "eligiblePages": {
+                "en-US": [
+                  "product_responsive",
+                  "rebrand",
+                  "homepage_responsive",
+                  "customer_service_responsive",
+                  "cmlp_responsive",
+                  "aboutus_responsive",
+                  "search"
+                ]
+              },
+              "pagelayerTargeting": {
+                "en-US": [
+                  {
+                    "metadata": {
+                      "tags": []
+                    },
+                    "sys": {
+                      "space": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "Space",
+                          "id": "k1ni6e3k3b2n"
+                        }
+                      },
+                      "id": "7CCm8n4MLE4sIeMk95OZ6V",
+                      "type": "Entry",
+                      "createdAt": "2023-05-26T14:17:23.388Z",
+                      "updatedAt": "2023-06-15T14:51:45.710Z",
+                      "environment": {
+                        "sys": {
+                          "id": "master",
+                          "type": "Link",
+                          "linkType": "Environment"
+                        }
+                      },
+                      "publishedVersion": 25,
+                      "publishedAt": "2023-06-15T14:51:45.710Z",
+                      "firstPublishedAt": "2023-05-26T14:18:33.819Z",
+                      "createdBy": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "User",
+                          "id": "748njyY4FDZiHKvXorl3vj"
+                        }
+                      },
+                      "updatedBy": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "User",
+                          "id": "0aouLRBGTtpDK4T7HeCxae"
+                        }
+                      },
+                      "publishedCounter": 9,
+                      "version": 26,
+                      "publishedBy": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "User",
+                          "id": "0aouLRBGTtpDK4T7HeCxae"
+                        }
+                      },
+                      "automationTags": [],
+                      "contentType": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "ContentType",
+                          "id": "pageLayerTargeting"
+                        }
+                      }
+                    },
+                    "fields": {
+                      "title": {
+                        "en-US": "3TUnidentified"
+                      },
+                      "pagelayerValue": {
+                        "en-US": [
+                          "unlimitedUser:false"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "slidingBannerText": {
+                "en-US": "<div title=\"Get the best of Laithwaites\" class=\"sliding-banner-content\">\n  <span class=\"text font-weight-bold fade-in-text\">\n    Get the best of Laithwaites \n    <a id=\"messageTwo\" href=\"/AD3W017\" style=\"padding-left:5px;\"><u>$140 off + bonus gifts</u></a>\n  </span>\n</div>"
+              }
+            }
+          },
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "k1ni6e3k3b2n"
+                }
+              },
+              "id": "2YIo9fPLUrD2fY4xiIp51F",
+              "type": "Entry",
+              "createdAt": "2023-05-24T14:24:09.747Z",
+              "updatedAt": "2023-05-26T14:19:46.022Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "publishedVersion": 23,
+              "publishedAt": "2023-05-26T14:19:46.022Z",
+              "firstPublishedAt": "2023-05-24T14:25:16.141Z",
+              "createdBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "748njyY4FDZiHKvXorl3vj"
+                }
+              },
+              "updatedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "748njyY4FDZiHKvXorl3vj"
+                }
+              },
+              "publishedCounter": 7,
+              "version": 24,
+              "publishedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "748njyY4FDZiHKvXorl3vj"
+                }
+              },
+              "automationTags": [],
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "ribbonMessage"
+                }
+              }
+            },
+            "fields": {
+              "title": {
+                "en-US": "FREE shipping on 12 amazing wines"
+              },
+              "eligiblePages": {
+                "en-US": [
+                  "rebrand",
+                  "homepage_responsive",
+                  "customer_service_responsive",
+                  "cmlp_responsive",
+                  "product_responsive",
+                  "aboutus_responsive",
+                  "search"
+                ]
+              },
+              "pagelayerTargeting": {
+                "en-US": [
+                  {
+                    "metadata": {
+                      "tags": []
+                    },
+                    "sys": {
+                      "space": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "Space",
+                          "id": "k1ni6e3k3b2n"
+                        }
+                      },
+                      "id": "7CCm8n4MLE4sIeMk95OZ6V",
+                      "type": "Entry",
+                      "createdAt": "2023-05-26T14:17:23.388Z",
+                      "updatedAt": "2023-06-15T14:51:45.710Z",
+                      "environment": {
+                        "sys": {
+                          "id": "master",
+                          "type": "Link",
+                          "linkType": "Environment"
+                        }
+                      },
+                      "publishedVersion": 25,
+                      "publishedAt": "2023-06-15T14:51:45.710Z",
+                      "firstPublishedAt": "2023-05-26T14:18:33.819Z",
+                      "createdBy": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "User",
+                          "id": "748njyY4FDZiHKvXorl3vj"
+                        }
+                      },
+                      "updatedBy": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "User",
+                          "id": "0aouLRBGTtpDK4T7HeCxae"
+                        }
+                      },
+                      "publishedCounter": 9,
+                      "version": 26,
+                      "publishedBy": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "User",
+                          "id": "0aouLRBGTtpDK4T7HeCxae"
+                        }
+                      },
+                      "automationTags": [],
+                      "contentType": {
+                        "sys": {
+                          "type": "Link",
+                          "linkType": "ContentType",
+                          "id": "pageLayerTargeting"
+                        }
+                      }
+                    },
+                    "fields": {
+                      "title": {
+                        "en-US": "3TUnidentified"
+                      },
+                      "pagelayerValue": {
+                        "en-US": [
+                          "unlimitedUser:false"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "slidingBannerText": {
+                "en-US": "<div title=\"FREE shipping on 12 amazing wines\" class=\"sliding-banner-content\">\n  <span class=\"text font-weight-bold fade-in-text\">\nFREE shipping on 12 amazing wines \n    <a id=\"messageThree\" href=\"/AD3W017\" style=\"padding-left:5px;\" ><u>get this deal</u></a>\n  </span>\n</div>"
+              }
+            }
+          }
+        ]
+      },
+      "identified3t": {
+        "en-US": [
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "k1ni6e3k3b2n"
+                }
+              },
+              "id": "SYM5zoOvgpAPKT68jNIUq",
+              "type": "Entry",
+              "createdAt": "2023-05-30T14:46:44.592Z",
+              "updatedAt": "2023-09-14T17:30:26.266Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "publishedVersion": 72,
+              "publishedAt": "2023-09-14T17:30:26.266Z",
+              "firstPublishedAt": "2023-05-30T14:53:31.091Z",
+              "createdBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "0aouLRBGTtpDK4T7HeCxae"
+                }
+              },
+              "updatedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "7wQg9FYW2YPXrYFMZnJbbd"
+                }
+              },
+              "publishedCounter": 22,
+              "version": 73,
+              "publishedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "7wQg9FYW2YPXrYFMZnJbbd"
+                }
+              },
+              "automationTags": [],
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "ribbonMessage"
+                }
+              }
+            },
+            "fields": {
+              "title": {
+                "en-US": "Don’t miss the 1/2 Century Celebration!"
+              },
+              "eligiblePages": {
+                "en-US": [
+                  "homepage_responsive",
+                  "search",
+                  "customer_service_responsive",
+                  "cmlp_responsive",
+                  "product_responsive",
+                  "aboutus_responsive",
+                  "rebrand"
+                ]
+              },
+              "slidingBannerText": {
+                "en-US": "<div title=\"Don’t miss the 1/2 Century Celebration!\" class=\"sliding-banner-content\">\n  <span class=\"text font-weight-bold fade-in-text\">\n    Don’t miss the 1/2 Century Celebration!\n    <a id=\"messageTwo\" href=\"/current-offers\" style=\"padding-left:5px;\" ><u>shop offers</u></a>\n  </span>\n</div>"
+              },
+              "startDate": {
+                "en-US": "2023-06-06T00:00-04:00"
+              },
+              "endDate": {
+                "en-US": "2024-01-31T00:00-04:00"
+              }
+            }
+          }
+        ]
+      },
+      "unidentifiedWd": {
+        "en-US": [
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "k1ni6e3k3b2n"
+                }
+              },
+              "id": "67RkFMvDgYW2WZfWkbLqsU",
+              "type": "Entry",
+              "createdAt": "2023-05-25T20:09:06.614Z",
+              "updatedAt": "2023-10-31T15:10:12.604Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "publishedVersion": 50,
+              "publishedAt": "2023-10-31T15:10:12.604Z",
+              "firstPublishedAt": "2023-05-25T20:10:59.798Z",
+              "createdBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "0aouLRBGTtpDK4T7HeCxae"
+                }
+              },
+              "updatedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "7wQg9FYW2YPXrYFMZnJbbd"
+                }
+              },
+              "publishedCounter": 15,
+              "version": 51,
+              "publishedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "7wQg9FYW2YPXrYFMZnJbbd"
+                }
+              },
+              "automationTags": [],
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "ribbonMessage"
+                }
+              }
+            },
+            "fields": {
+              "title": {
+                "en-US": "3T Award-Winning Holiday Wines 12 bottles for $69.99 "
+              },
+              "eligiblePages": {
+                "en-US": [
+                  "homepage_responsive",
+                  "customer_service_responsive",
+                  "cmlp_responsive",
+                  "product_responsive",
+                  "aboutus_responsive",
+                  "search",
+                  "rebrand"
+                ]
+              },
+              "slidingBannerText": {
+                "en-US": "<div title=\"Award-Winning Holiday Wines 12 bottles for $69.99\" class=\"sliding-banner-content\">\n  <span class=\"text font-weight-bold fade-in-text\">\n    Award-Winning Holiday Wines\n    <a id=\"messageOne\" href=\"/AF9R006\" style=\"padding-left:5px;\" ><u>12 bottles for $69.99</u></a>\n  </span>\n</div>"
+              },
+              "startDate": {
+                "en-US": "2023-06-06T00:00-04:00"
+              },
+              "endDate": {
+                "en-US": "2026-06-01T00:00-04:00"
+              }
+            }
+          },
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "k1ni6e3k3b2n"
+                }
+              },
+              "id": "5zVevBL5C8hnuu1jK106Rp",
+              "type": "Entry",
+              "createdAt": "2023-05-25T20:12:52.641Z",
+              "updatedAt": "2023-10-31T15:12:17.180Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "publishedVersion": 39,
+              "publishedAt": "2023-10-31T15:12:17.180Z",
+              "firstPublishedAt": "2023-05-25T20:15:36.554Z",
+              "createdBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "0aouLRBGTtpDK4T7HeCxae"
+                }
+              },
+              "updatedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "7wQg9FYW2YPXrYFMZnJbbd"
+                }
+              },
+              "publishedCounter": 11,
+              "version": 40,
+              "publishedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "7wQg9FYW2YPXrYFMZnJbbd"
+                }
+              },
+              "automationTags": [],
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "ribbonMessage"
+                }
+              }
+            },
+            "fields": {
+              "title": {
+                "en-US": "Receive 2 BONUS GIFTS with Your Order"
+              },
+              "eligiblePages": {
+                "en-US": [
+                  "homepage_responsive",
+                  "customer_service_responsive",
+                  "cmlp_responsive",
+                  "product_responsive",
+                  "aboutus_responsive",
+                  "search",
+                  "rebrand"
+                ]
+              },
+              "slidingBannerText": {
+                "en-US": "<div title=\"Receive 2 BONUS GIFTS with Your Order\" class=\"sliding-banner-content\">\n  <span class=\"text font-weight-bold fade-in-text\">\n    Receive 2 BONUS GIFTS with Your Order\n<a id=\"messageTwo\" href=\"/AF9R006\" style=\"padding-left:5px;\"><u>see offer</u></a>\n  </span>\n</div>"
+              },
+              "startDate": {
+                "en-US": "2023-06-06T00:00-04:00"
+              },
+              "endDate": {
+                "en-US": "2026-06-01T00:00-04:00"
+              }
+            }
+          },
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "k1ni6e3k3b2n"
+                }
+              },
+              "id": "5QDziLFR4gEWB6N0m6KCJU",
+              "type": "Entry",
+              "createdAt": "2023-05-25T20:15:48.601Z",
+              "updatedAt": "2023-06-07T15:38:03.494Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "publishedVersion": 30,
+              "publishedAt": "2023-06-07T15:38:03.494Z",
+              "firstPublishedAt": "2023-05-25T20:22:04.720Z",
+              "createdBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "0aouLRBGTtpDK4T7HeCxae"
+                }
+              },
+              "updatedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "4Vds2jqJTxnNSdCtFBSYwU"
+                }
+              },
+              "publishedCounter": 8,
+              "version": 31,
+              "publishedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "4Vds2jqJTxnNSdCtFBSYwU"
+                }
+              },
+              "automationTags": [],
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "ribbonMessage"
+                }
+              }
+            },
+            "fields": {
+              "title": {
+                "en-US": "3T FREE shipping on 12 amazing wines"
+              },
+              "eligiblePages": {
+                "en-US": [
+                  "homepage_responsive",
+                  "customer_service_responsive",
+                  "cmlp_responsive",
+                  "product_responsive",
+                  "aboutus_responsive",
+                  "search",
+                  "rebrand"
+                ]
+              },
+              "slidingBannerText": {
+                "en-US": "<div title=\"FREE shipping on 12 amazing wines\" class=\"sliding-banner-content\">\n  <span class=\"text font-weight-bold fade-in-text\">\nFREE shipping on 12 amazing wines \n    <a id=\"messageThree\" href=\"/AD3W017\" style=\"padding-left:5px;\" ><u>get this deal</u></a>\n  </span>\n</div>"
+              },
+              "startDate": {
+                "en-US": "2023-06-06T00:00-04:00"
+              },
+              "endDate": {
+                "en-US": "2023-06-30T00:00-04:00"
+              }
+            }
+          },
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "k1ni6e3k3b2n"
+                }
+              },
+              "id": "4FDQAMfw07pSYZLmERhFRD",
+              "type": "Entry",
+              "createdAt": "2023-05-25T20:11:06.835Z",
+              "updatedAt": "2023-06-07T15:32:50.479Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "publishedVersion": 22,
+              "publishedAt": "2023-06-07T15:32:50.479Z",
+              "firstPublishedAt": "2023-05-25T20:12:48.466Z",
+              "createdBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "0aouLRBGTtpDK4T7HeCxae"
+                }
+              },
+              "updatedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "4Vds2jqJTxnNSdCtFBSYwU"
+                }
+              },
+              "publishedCounter": 6,
+              "version": 23,
+              "publishedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "4Vds2jqJTxnNSdCtFBSYwU"
+                }
+              },
+              "automationTags": [],
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "ribbonMessage"
+                }
+              }
+            },
+            "fields": {
+              "title": {
+                "en-US": "100% money-back guarantee on every bottle"
+              },
+              "eligiblePages": {
+                "en-US": [
+                  "homepage_responsive",
+                  "customer_service_responsive",
+                  "cmlp_responsive",
+                  "product_responsive",
+                  "aboutus_responsive",
+                  "search",
+                  "rebrand"
+                ]
+              },
+              "slidingBannerText": {
+                "en-US": "<div title=\"100% money-back guarantee on every bottle\" class=\"sliding-banner-content\">\n  <span class=\"text font-weight-bold fade-in-text\">\n100% money-back guarantee on every bottle\n    <a id=\"messageFour\" href=\"/AD3W013\" style=\"padding-left:5px;\" ><u>shop now</u></a>\n  </span>\n</div>"
+              },
+              "startDate": {
+                "en-US": "2023-06-06T00:00-04:00"
+              },
+              "endDate": {
+                "en-US": "2023-06-30T00:00-04:00"
+              }
+            }
+          },
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "k1ni6e3k3b2n"
+                }
+              },
+              "id": "4o4ouNWggJZO4jmucgGae9",
+              "type": "Entry",
+              "createdAt": "2023-05-25T20:25:39.091Z",
+              "updatedAt": "2023-06-07T15:33:22.126Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "publishedVersion": 23,
+              "publishedAt": "2023-06-07T15:33:22.126Z",
+              "firstPublishedAt": "2023-05-25T20:26:59.687Z",
+              "createdBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "0aouLRBGTtpDK4T7HeCxae"
+                }
+              },
+              "updatedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "4Vds2jqJTxnNSdCtFBSYwU"
+                }
+              },
+              "publishedCounter": 6,
+              "version": 24,
+              "publishedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "4Vds2jqJTxnNSdCtFBSYwU"
+                }
+              },
+              "automationTags": [],
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "ribbonMessage"
+                }
+              }
+            },
+            "fields": {
+              "title": {
+                "en-US": "A family business for 50+ years"
+              },
+              "eligiblePages": {
+                "en-US": [
+                  "homepage_responsive",
+                  "customer_service_responsive",
+                  "cmlp_responsive",
+                  "product_responsive",
+                  "aboutus_responsive",
+                  "search",
+                  "rebrand"
+                ]
+              },
+              "slidingBannerText": {
+                "en-US": "<div title=\"A family business for 50+ years\" class=\"sliding-banner-content\">\n  <span class=\"text font-weight-bold fade-in-text\">\nA family business for 50+ years\n    <a id=\"messageFive\" href=\"/AD3W013\" style=\"padding-left:5px;\" ><u>uncork a great offer</u></a>\n  </span>\n</div>"
+              },
+              "startDate": {
+                "en-US": "2023-06-06T00:00-04:00"
+              },
+              "endDate": {
+                "en-US": "2023-06-30T00:00-04:00"
+              }
+            }
+          },
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "k1ni6e3k3b2n"
+                }
+              },
+              "id": "01ott7s857q4dGyAYcBAq5",
+              "type": "Entry",
+              "createdAt": "2023-05-25T20:27:02.601Z",
+              "updatedAt": "2023-06-07T15:33:40.539Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "publishedVersion": 20,
+              "publishedAt": "2023-06-07T15:33:40.539Z",
+              "firstPublishedAt": "2023-05-25T20:28:13.433Z",
+              "createdBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "0aouLRBGTtpDK4T7HeCxae"
+                }
+              },
+              "updatedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "4Vds2jqJTxnNSdCtFBSYwU"
+                }
+              },
+              "publishedCounter": 6,
+              "version": 21,
+              "publishedBy": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "User",
+                  "id": "4Vds2jqJTxnNSdCtFBSYwU"
+                }
+              },
+              "automationTags": [],
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "ribbonMessage"
+                }
+              }
+            },
+            "fields": {
+              "title": {
+                "en-US": "We tasted 40k wines & chose just 2%"
+              },
+              "eligiblePages": {
+                "en-US": [
+                  "homepage_responsive",
+                  "customer_service_responsive",
+                  "cmlp_responsive",
+                  "product_responsive",
+                  "aboutus_responsive",
+                  "search",
+                  "rebrand"
+                ]
+              },
+              "slidingBannerText": {
+                "en-US": "<div title=\"We tasted 40k wines & chose just 2%\" class=\"sliding-banner-content\">\n  <span class=\"text font-weight-bold fade-in-text\">\nWe tasted 40k wines & chose just 2%\n    <a id=\"messageSix\" href=\"/AD3W013\" style=\"padding-left:5px;\" ><u>see top picks</u></a>\n  </span>\n</div>"
+              },
+              "startDate": {
+                "en-US": "2023-06-06T00:00-04:00"
+              },
+              "endDate": {
+                "en-US": "2023-06-30T00:00-04:00"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+]

@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "esbuild ./src/index.ts --watch --bundle --platform=node --target=node12 --outfile=./bin/index.js",
     "build": "esbuild ./src/index.ts --bundle --platform=node --target=node12 --outfile=./bin/index.js",
-    "command:react-release": "node ./bin/index.js react-release"
+    "command:react-release": "node ./bin/index.js react-release",
+    "command:contentful-deep-copy": "node ./bin/index.js contentful-deep-copy"
   },
   "files": [
     "bin",
@@ -20,8 +21,11 @@
   "author": "Mahmoud Yousif <mahmoud.yousif@archwaypi.com>",
   "license": "UNLICENSED",
   "dependencies": {
+    "@types/contentful-resolve-response": "^0.1.33",
     "@types/inquirer": "^9.0.3",
+    "axios": "^1.6.2",
     "chalk": "^5.2.0",
+    "contentful-resolve-response": "^1.8.1",
     "inquirer": "^9.2.11",
     "ora": "^6.3.0",
     "simple-git": "^3.18.0",

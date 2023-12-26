@@ -10,3 +10,7 @@ export const DW = 'DW';
 export const DIRECT_WINES_FRONTEND_ORG = 'dw-front-end-engineering';
 export const CHECK_MARK = '✔';
 /** ./staticStrings */
+
+/** urls */
+export const CONTENTFUL_BASE_URL = 'https://api.contentful.com';
+/** ./urls */
